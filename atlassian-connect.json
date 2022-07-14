@@ -1,0 +1,44 @@
+{
+    "key": "thanh-app-1042120722",
+    "name": "Connect app Nodejs Azure - demo",
+    "description": "Connect framework with Nodejs, deploy on Azure",
+    "baseUrl": "https://crmprm.azurewebsites.net",
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed",
+        "uninstalled": "/uninstalled"
+    },
+    "scopes": [
+        "READ"
+    ],
+    "apiMigrations":{
+        "signed-install": true
+    },
+    "modules": {
+        "generalPages": [
+            {
+                "key": "hello-world-page-jira",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Hello World"
+                },
+                "url": "/hello-world?issueKey={issue.key}",
+                "conditions": [{
+                    "condition": "user_is_logged_in"
+                }]
+            }
+        ],
+        "webPanels": [
+            {
+              "url": "/main?issueKey={issue.key}",
+              "location": "atl.jira.view.issue.left.context",
+              "name": {
+                "value": "Demo require authentication"
+              },
+              "key": "thanh-reminder-web-right-panel"
+            }
+        ]
+    }
+}
