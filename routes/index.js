@@ -2,21 +2,16 @@ export default function routes(app, addon) {
     app.get('/', (req, res) => {
         res.redirect('/atlassian-connect.json');
     });
-
-    app.post('/installed', (req, res) => {
-        console.log("HEADER-LOG");
-        console.log(req.headers);
-        console.log("BODY-LOG");
-        console.log(req.body);
-    });
-
+    
     // app.post('/uninstalled', (req, res) => {
-
-    // });
-
+      
+      // });
+      
     app.get('/hello-world', (req, res) => {
-      console.log("hello-world");
-      console.log(req);
+      console.log(req.headers);
+      console.log("HEADER-LOG");
+      console.log("BODY-LOG");
+      console.log(req.body);
       res.render(
         'hello-world.jsx',
         {
