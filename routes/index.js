@@ -20,8 +20,7 @@ export default function routes(app, addon) {
     });
 
     app.get('/uikit', (req, res) => {
-      console.log("uikit");
-      console.log(res);
+      console.log("uikit-LOG");
       res.render(
         'uikit-demo.jsx',
         {
