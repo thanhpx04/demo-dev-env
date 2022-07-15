@@ -9,7 +9,7 @@ export default function routes(app, addon) {
       
     app.get('/hello-world', (req, res) => {
       res.render(
-        'hello-world.jsx',
+        'hello-world.hbs',
         {
           title: `Hello Thanh's world`
         }
