@@ -8,10 +8,8 @@ export default function routes(app, addon) {
       // });
       
     app.get('/hello-world', (req, res) => {
-      console.log(req.headers);
-      console.log("HEADER-LOG");
-      console.log("BODY-LOG");
-      console.log(req.body);
+      console.log("context-LOG");
+      console.log(AP.context.getToken());
       res.render(
         'hello-world.jsx',
         {
