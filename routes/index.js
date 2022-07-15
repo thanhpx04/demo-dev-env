@@ -8,6 +8,9 @@ export default function routes(app, addon) {
       // });
       
     app.get('/hello-world', (req, res) => {
+      console.log("HELLO-LOG");
+      console.log(req);
+      console.log(req.context);
       res.render(
         'hello-world.hbs',
         {
