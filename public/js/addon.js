@@ -1,5 +1,18 @@
 /* App frontend script */
-function checkAPI() {
-    console.log("context-LOG");
-    console.log(AP.context.getToken());
+function getToken() {
+    AP.context.getToken().then(
+        response => {
+            console.log("getToken-LOG");
+            console.log(response);
+        }
+    );
+}
+
+function getContext() {
+    AP.context.getContext().then(
+        response => {
+            console.log("getContext-LOG");
+            console.log(response);
+        }
+    );
 }

@@ -3,7 +3,7 @@ export default function routes(app, addon) {
         res.redirect('/atlassian-connect.json');
     });
     
-    // app.post('/uninstalled', (req, res) => {
+    // app.post('/installed', (req, res) => {
       
       // });
       
