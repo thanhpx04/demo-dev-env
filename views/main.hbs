@@ -1,9 +1,12 @@
 {{!< layout}}
-<div class="aui-page-panel">
-    <div class="aui-page-panel-inner">
-        <section class="aui-page-panel-content">
-            <h2>Page content heading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>
-    </div>
+<div class="aui-message">
+  <p class="title"><strong>Connect Github</strong></p>
+  <p>Issue key is <time>{{issueKey}}</time> and summary is</p>
+  <a data-aui-trigger aria-controls="start-open" href="#start-open">
+    This inline dialog starts open
+  </a>
+  <aui-inline-dialog id="start-open" open aria-label="Open from the start">
+      <p>Lorem ipsum.</p>
+      <a class="aui-button aui-button-link">Close</a>
+  </aui-inline-dialog>
 </div>

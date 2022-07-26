@@ -1,6 +1,6 @@
 {
     "key": "thanh-app-1837140722",
-    "name": "Connect app Nodejs Azure - demo",
+    "name": "Connect app Nodejs Azure - Github app",
     "description": "Connect framework with Nodejs, deploy on Azure",
     "baseUrl": "https://demo-dev-env.azurewebsites.net",
     "authentication": {
@@ -16,9 +16,9 @@
         "webPanels": [
             {
               "url": "/main?issueKey={issue.key}",
-              "location": "atl.jira.view.issue.left.context",
+              "location": "atl.jira.view.issue.right.context",
               "name": {
-                "value": "Demo require authentication"
+                "value": "Thanh Github"
               },
               "key": "thanh-reminder-web-right-panel"
             }
