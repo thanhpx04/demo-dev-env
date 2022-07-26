@@ -2,10 +2,6 @@ export default function routes(app, addon) {
     app.get('/', (req, res) => {
         res.redirect('/atlassian-connect.json');
     });
-    
-    // app.post('/installed', (req, res) => {
-      
-      // });
       
     app.get('/hello-world', (req, res) => {
       console.log("HELLO-LOG");
@@ -29,31 +25,15 @@ export default function routes(app, addon) {
       );
     });
 
-    app.get('/main', addon.authenticate(), (req, res) => {
-      console.log("main");
-      console.log(addon);
+    app.get('/main', (req, res) => {
       const {issueKey} = req.query
-      getIssueSummary(addon, req, issueKey).then((issueSummary) => {
-        res.render(
-          'main.hbs',
-          {
-              title: 'Demo require authentication',
-              issueSummary: issueSummary,
-              issueKey: issueKey
-          }
-        );
-      })
+      res.render(
+        'main.hbs',
+        {
+          issueKey: issueKey
+        }
+      );
     });
-
-    async function getIssueSummary (addon, req, issueKey)  {
-      return new Promise((resolve, reject) => {
-
-          var httpClient = addon.httpClient(req);
-          httpClient.get(`/rest/api/3/issue/${issueKey}`, function (err, res, body) {
-              resolve(JSON.parse(body).fields.summary)
-          });
-      })
-    }
 
     // Add additional route handlers here...
 }

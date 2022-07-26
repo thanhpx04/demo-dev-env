@@ -4,11 +4,7 @@
     "description": "Connect framework with Nodejs, deploy on Azure",
     "baseUrl": "https://demo-dev-env.azurewebsites.net",
     "authentication": {
-        "type": "jwt"
-    },
-    "lifecycle": {
-        "installed": "/installed",
-        "uninstalled": "/uninstalled"
+        "type": "none"
     },
     "scopes": [
         "READ"
@@ -17,19 +13,6 @@
         "signed-install": true
     },
     "modules": {
-        "generalPages": [
-            {
-                "key": "hello-world-page-jira",
-                "location": "system.top.navigation.bar",
-                "name": {
-                    "value": "Hello World"
-                },
-                "url": "/hello-world?issueKey={issue.key}",
-                "conditions": [{
-                    "condition": "user_is_logged_in"
-                }]
-            }
-        ],
         "webPanels": [
             {
               "url": "/main?issueKey={issue.key}",
