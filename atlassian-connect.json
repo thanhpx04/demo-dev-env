@@ -25,7 +25,7 @@
         ],
         "dialogs": [
             {
-              "url": "/my-dialog-content",
+              "url": "/github-dialog.html",
               "options": {
                 "header": {
                   "value": "Test Header"
