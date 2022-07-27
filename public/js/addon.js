@@ -1,11 +1,9 @@
 /* App frontend script */
-function getToken() {
-    AP.context.getToken().then(
-        response => {
-            console.log("getToken-LOG");
-            console.log(response);
-        }
-    );
+function getGitHubInfo() {
+    // get issue key
+    // const context = await AP.context.getContext();
+    // var issueKey = context.jira.issue.key;
+    console.log(issueKey);
 }
 
 function getContext() {

@@ -1,12 +1,17 @@
 {{!< layout}}
-<div class="aui-message">
-  <p class="title"><strong>Connect Github</strong></p>
-  <p>Issue key is <time>{{issueKey}}</time> and summary is</p>
-  <a data-aui-trigger aria-controls="start-open" href="#start-open">
-    This inline dialog starts open
-  </a>
-  <aui-inline-dialog id="start-open" open aria-label="Open from the start">
-      <p>Lorem ipsum.</p>
-      <a class="aui-button aui-button-link">Close</a>
-  </aui-inline-dialog>
+<div class="aui-page-panel">
+    <div class="aui-page-panel-inner">
+        <section class="aui-page-panel-content">
+          <div class="aui-group">
+            <h2>Github with Connect</h2>
+            <div class="aui-item">
+              <button class="aui-button aui-button-primary" type="button" onclick="getGitHubInfo()">
+                Get GitHub Info
+              </button>
+            </div>
+          </div>
+          <div class="aui-item" id="githubInfo">
+          </div>
+        </section>
+    </div>
 </div>
