@@ -47,9 +47,8 @@ function openDialog() {
     AP.dialog.create({
         key: 'dialog-module-key',
         width: '500px',
-        height: '200px',
-        chrome: true,
-        submitText: 'Close'
+        height: '600px',
+        chrome: true
       }).on("close", callbackFunc);
 }
 
@@ -68,4 +67,9 @@ AJS.$("#dialog-show-button").on('click', function(e) {
 AJS.$("#dialog-submit-button").on('click', function (e) {
     e.preventDefault();
     AJS.dialog2("#demo-dialog").hide();
+});
+
+// Listen for hide event of #demo-dialog and focus target element
+AJS.dialog2("#demo-dialog").on('hide', function (e) {
+    $("#new-active-element").focus()
 });
