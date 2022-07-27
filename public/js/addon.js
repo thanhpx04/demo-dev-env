@@ -2,9 +2,11 @@
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';
-    const token = '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';
+    const token = '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';
     // const context = await AP.context.getContext();
     // var issueKey = context.jira.issue.key;
+    console.log(issueKey);
+    issueKey = 'PD-15';
     console.log(issueKey);
     const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
         headers: {
@@ -41,14 +43,17 @@ function displayData(noBranches, noCommits) {
     </div>`;
 }
 
-        // Shows the dialog when the "Show dialog" button is clicked
-        AJS.$("#dialog-show-button").on('click', function(e) {
-            e.preventDefault();
-            AJS.dialog2("#demo-dialog").show();
-        });
-
-        // Hides the dialog
-        AJS.$("#dialog-submit-button").on('click', function (e) {
-            e.preventDefault();
-            AJS.dialog2("#demo-dialog").hide();
-        });
+function openDialog() {
+    AP.dialog.create({
+        key: 'my-module-key',
+        width: '500px',
+        height: '200px',
+        chrome: true,
+        buttons: [
+          {
+            text: 'my button',
+            identifier: 'my_unique_identifier'
+          }
+        ]
+      }).on("close", callbackFunc);
+}
