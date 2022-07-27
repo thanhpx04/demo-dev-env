@@ -44,32 +44,29 @@ function displayData(noBranches, noCommits) {
 }
 
 function openDialog() {
-    AP.dialog.create({
-        key: 'dialog-module-key',
-        width: '500px',
-        height: '600px',
-        chrome: true
-      }).on("close", callbackFunc);
+    let closeCallback = () => {
+        alert('First Dialog: Close Callback');
+    };
+
+    AP.require('dialog', function (dialog) {
+        var newDialog = dialog.create({
+            key: 'dialog-module-key',
+            width: '500px',
+            height: '200px',
+            chrome: true,
+            header: 'First Dialog',
+            submitText: 'Submit',
+            cancelText: 'Close',
+        }, true).on('close', closeCallback);
+    });
+    // AP.dialog.create({
+    //     key: 'dialog-module-key',
+    //     width: '500px',
+    //     height: '400px',
+    //     chrome: true
+    //   }).on("close", callbackFunc);
 }
 
 function callbackFunc() {
     console.log("closed");
 }
-
-
-// Shows the dialog when the "Show dialog" button is clicked
-AJS.$("#dialog-show-button").on('click', function(e) {
-    e.preventDefault();
-    AJS.dialog2("#demo-dialog").show();
-});
-
-// Hides the dialog
-AJS.$("#dialog-submit-button").on('click', function (e) {
-    e.preventDefault();
-    AJS.dialog2("#demo-dialog").hide();
-});
-
-// Listen for hide event of #demo-dialog and focus target element
-AJS.dialog2("#demo-dialog").on('hide', function (e) {
-    $("#new-active-element").focus()
-});

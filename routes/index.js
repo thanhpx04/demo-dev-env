@@ -14,11 +14,5 @@ export default function routes(app, addon) {
       );
     });
 
-    app.get('/github-dialog', (req, res) => {
-      res.render(
-        'github-dialog.hbs'
-      );
-    });
-
     // Add additional route handlers here...
 }
