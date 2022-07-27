@@ -1,30 +1,22 @@
-<table class="aui">
-    <thead>
-        <tr>
-            <th id="basic-number">#</th>
-            <th id="basic-fname">First name</th>
-            <th id="basic-lname">Last name</th>
-            <th id="basic-username">Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td headers="basic-number">1</td>
-            <td headers="basic-fname">Matt</td>
-            <td headers="basic-lname">Bond</td>
-            <td headers="basic-username">mbond</td>
-        </tr>
-        <tr>
-            <td headers="basic-number">2</td>
-            <td headers="basic-fname">Ross</td>
-            <td headers="basic-lname">Chaldecott</td>
-            <td headers="basic-username">rchaldecott</td>
-        </tr>
-        <tr>
-            <td headers="basic-number">3</td>
-            <td headers="basic-fname">Henry</td>
-            <td headers="basic-lname">Tapia</td>
-            <td headers="basic-username">htapia</td>
-        </tr>
-    </tbody>
-</table>
+<section
+    id="demo-dialog"
+    class="aui-dialog2 aui-dialog2-small aui-layer"
+    role="dialog"
+    tabindex="-1"
+    aria-labelledby="dialog-show-button--heading"
+    hidden
+>
+    <header class="aui-dialog2-header">
+        <h1 class="aui-dialog2-header-main" id="dialog-show-button--heading">Captain...</h1>
+        <button class="aui-close-button" type="button" aria-label="close"></button>
+    </header>
+    <div class="aui-dialog2-content">
+        <p>We've detected debris of some sort in a loose orbit.</p>
+        <p>I suggest we beam a section aboard for analysis...</p>
+    </div>
+    <footer class="aui-dialog2-footer">
+        <div class="aui-dialog2-footer-actions">
+            <button id="dialog-submit-button" class="aui-button aui-button-primary">Make it so</button>
+        </div>
+    </footer>
+</section>

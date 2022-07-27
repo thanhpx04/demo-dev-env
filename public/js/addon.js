@@ -56,3 +56,16 @@ function openDialog() {
 function callbackFunc() {
     console.log("closed");
 }
+
+
+// Shows the dialog when the "Show dialog" button is clicked
+AJS.$("#dialog-show-button").on('click', function(e) {
+    e.preventDefault();
+    AJS.dialog2("#demo-dialog").show();
+});
+
+// Hides the dialog
+AJS.$("#dialog-submit-button").on('click', function (e) {
+    e.preventDefault();
+    AJS.dialog2("#demo-dialog").hide();
+});
