@@ -22,6 +22,17 @@
               },
               "key": "thanh-reminder-web-right-panel"
             }
-        ]
+        ],
+        "dialogs": [
+            {
+              "url": "/my-dialog-content",
+              "options": {
+                "header": {
+                  "value": "Test Header"
+                }
+              },
+              "key": "dialog-module-key"
+            }
+          ]
     }
 }

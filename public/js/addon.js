@@ -45,15 +45,14 @@ function displayData(noBranches, noCommits) {
 
 function openDialog() {
     AP.dialog.create({
-        key: 'my-module-key',
+        key: 'dialog-module-key',
         width: '500px',
         height: '200px',
         chrome: true,
-        buttons: [
-          {
-            text: 'my button',
-            identifier: 'my_unique_identifier'
-          }
-        ]
+        submitText: 'Close'
       }).on("close", callbackFunc);
+}
+
+function callbackFunc() {
+    console.log("closed");
 }
