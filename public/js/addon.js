@@ -2,11 +2,12 @@
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';
-    const token = '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';
+    const token = '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';
+    const currentBranch = 'M4P-1-discuss-design-logo';
     // const context = await AP.context.getContext();
     // var issueKey = context.jira.issue.key;
-    console.log(issueKey);
-    issueKey = 'PD-15';
+    // console.log(issueKey);
+    // issueKey = 'M4P-1';
     console.log(issueKey);
     const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
         headers: {
@@ -17,7 +18,7 @@ async function getGitHubInfo(issueKey) {
     let listFilteredBranches = dataBranches.filter(function (item) { return item.name.includes(issueKey); });
     console.log(listFilteredBranches);
     console.log(listFilteredBranches.length);
-    const responseCommits = await fetch(` https://api.github.com/repos/${owner}/${repo}/commits`, {
+    const responseCommits = await fetch(` https://api.github.com/repos/${owner}/${repo}/commits?sha=${currentBranch}`, {
         headers: {
             "Accept": "application/json",
             "Authorization": `Bearer ${token}`}
