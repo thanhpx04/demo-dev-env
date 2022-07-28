@@ -1,20 +1,16 @@
 {{!< layout}}
-<div class="aui-page-panel">
-    <div class="aui-page-panel-inner">
-        <section class="aui-page-panel-content">
-          <div class="aui-group">
-            <h2>Github with Connect</h2>
-            <p>
-              <button class="aui-button aui-button-primary" type="button" onclick="getGitHubInfo({{issueKey}})">
-                Get GitHub Info
-              </button>
-              <button class="aui-button aui-button-primary" type="button" onclick="openDialog('{{issueKey}}')">
-                Open Dialog
-              </button>
-            </p>
-          </div>
-          <div style="margin-top: 10px" id="githubInfo">
-          </div>
-        </section>
-    </div>
-</div>
+<section class="aui-page-panel-content">
+  <div class="aui-group">
+    <h2>Github with Connect {{issueKey}}</h2>
+    <p>
+      <button class="aui-button aui-button-primary" type="button" onclick="getGitHubInfo({{issueKey}})">
+        Get GitHub Info
+      </button>
+      <button class="aui-button aui-button-primary" type="button" onclick="openDialog('{{issueKey}}')">
+        Open Dialog
+      </button>
+    </p>
+  </div>
+  <div style="margin-top: 10px" id="githubInfo">
+  </div>
+</section>

@@ -2,7 +2,7 @@
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';
-    const token = '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';
+    const token = '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';
     const currentBranch = 'M4P-1-discuss-design-logo';
     // console.log(issueKey);
     // issueKey = 'M4P-1';
@@ -51,8 +51,8 @@ function openDialog(issueKey) {
     AP.require('dialog', function (dialog) {
         var newDialog = dialog.create({
             key: 'dialog-module-key',
-            width: '500px',
-            height: '400px',
+            width: '720px',
+            height: '576px',
             chrome: true,
             header: 'Development',
             cancelText: 'Close',
