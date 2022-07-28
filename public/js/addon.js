@@ -43,7 +43,7 @@ function displayData(noBranches, noCommits) {
     </div>`;
 }
 
-function openDialog() {
+function openDialog(issueKey) {
     let closeCallback = () => {
         alert('First Dialog: Close Callback');
     };
@@ -52,21 +52,10 @@ function openDialog() {
         var newDialog = dialog.create({
             key: 'dialog-module-key',
             width: '500px',
-            height: '200px',
+            height: '400px',
             chrome: true,
-            header: 'First Dialog',
-            submitText: 'Submit',
+            header: `Development ${issueKey}`,
             cancelText: 'Close',
         }, true).on('close', closeCallback);
     });
-    // AP.dialog.create({
-    //     key: 'dialog-module-key',
-    //     width: '500px',
-    //     height: '400px',
-    //     chrome: true
-    //   }).on("close", callbackFunc);
-}
-
-function callbackFunc() {
-    console.log("closed");
 }
