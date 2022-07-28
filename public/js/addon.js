@@ -2,10 +2,8 @@
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';
-    const token = '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';
+    const token = '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';
     const currentBranch = 'M4P-1-discuss-design-logo';
-    // const context = await AP.context.getContext();
-    // var issueKey = context.jira.issue.key;
     // console.log(issueKey);
     // issueKey = 'M4P-1';
     console.log(issueKey);
