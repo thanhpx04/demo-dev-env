@@ -2,7 +2,7 @@
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';
-    const token = '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';
+    const token = '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';
     const currentBranch = 'M4P-1-discuss-design-logo';
     // console.log(issueKey);
     // issueKey = 'M4P-1';
@@ -51,11 +51,15 @@ function openDialog(issueKey) {
     AP.require('dialog', function (dialog) {
         var newDialog = dialog.create({
             key: 'dialog-module-key',
-            width: '720px',
-            height: '576px',
+            width: '700px',
+            height: '350px',
             chrome: true,
             header: 'Development',
             cancelText: 'Close',
         }, true).on('close', closeCallback);
     });
 }
+
+Handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context);
+});
