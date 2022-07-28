@@ -6,10 +6,48 @@
   </head>
   <body>
 
-        <div class="aui-dialog2-content">
-            <p>We've detected debris of some sort in a loose orbit.</p>
-            <p>I suggest we beam a section aboard for analysis...</p>
-        </div>
+    <table class="aui aui-table-list" style="width: 500px">
+      <thead>
+          <tr>
+              <th id="author">Author</th>
+              <th id="commit">Commit</th>
+              <th id="commit">Message</th>
+              <th id="date">Commit date</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td headers="author">
+                  <span class="aui-avatar aui-avatar-xsmall">
+                      <span class="aui-avatar-inner">
+                          <img src="images/avatar-person.svg" alt="" role="presentation" />
+                      </span>
+                  </span>
+                  Alana
+              </td>
+              <td headers="commit">
+                  <a href="#">2585eafcbca</a>
+              </td>
+              <td headers="date">aaaaaaa</td>
+              <td headers="date">1 hour ago</td>
+          </tr>
+          <tr class="aui-row-subtle">
+              <td headers="author">
+                  <span class="aui-avatar aui-avatar-xsmall">
+                      <span class="aui-avatar-inner">
+                          <img src="images/avatar-person.svg" alt="" role="presentation" />
+                      </span>
+                  </span>
+                  Emma
+              </td>
+              <td headers="commit">
+                  <a href="#">057e4fa1472</a>
+              </td>
+              <td headers="date">bbbbbbbb</td>
+              <td headers="date">2 hours ago</td>
+          </tr>
+      </tbody>
+  </table>
     
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
