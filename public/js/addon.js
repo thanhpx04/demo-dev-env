@@ -2,7 +2,7 @@
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';
-    const token = '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';
+    const token = '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';
     const currentBranch = 'M4P-1-discuss-design-logo';
     // console.log(issueKey);
     // issueKey = 'M4P-1';
