@@ -44,8 +44,9 @@ function displayData(noBranches, noCommits) {
 }
 
 function openDialog(issueKey) {
+    console.log(issueKey);
     let closeCallback = () => {
-        alert('First Dialog: Close Callback');
+        alert('Close Callback');
     };
 
     AP.require('dialog', function (dialog) {
@@ -54,7 +55,7 @@ function openDialog(issueKey) {
             width: '500px',
             height: '400px',
             chrome: true,
-            header: `Development ${issueKey}`,
+            header: 'Development',
             cancelText: 'Close',
         }, true).on('close', closeCallback);
     });
