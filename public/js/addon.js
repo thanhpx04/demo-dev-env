@@ -62,14 +62,32 @@ function openDialog(issueKey) {
 
 async function putEntity() {
     const contextResult = await AP.context.getContext();
-    const contextData = JSON.parse(contextResult);
-    console.log(contextData);
-    // const responseBranches = await fetch(`https://api.github.com/repos/${owner}/${repo}/branches`, {
-    //     headers: {
-    //         "Accept": "application/json",
-    //         "Authorization": `Bearer ${token}`}
-    // });
-    // const dataBranches = await responseBranches.json();
+    
+    const thanhPropertyKey = 'thanh04PropertyKey';
+    const bodyData = `{
+        "issue": {
+            "id": ${contextResult.jira.issue.id},
+            "key": ${contextResult.jira.issue.key}
+        },
+        "project": {
+            "id": ${contextResult.jira.project.id},
+            "key": ${contextResult.jira.project.key}
+        }
+    }`;
+    console.log(bodyData);
+
+    AP.request(`rest/api/2/issue/${contextResult.jira.issue.key}/properties/${thanhPropertyKey}`, {
+    method: 'PUT',
+    body: bodyData
+    })
+    .then(response => {
+        console.log(
+        `Response: ${response.status} ${response.statusText}`
+        );
+        return response.text();
+    })
+    .then(text => console.log(text))
+    .catch(err => console.error(err));
 }
 
 async function getEntity() {
