@@ -59,3 +59,26 @@ function openDialog(issueKey) {
         }, true).on('close', closeCallback);
     });
 }
+
+async function putEntity() {
+    const contextResult = await AP.context.getContext();
+    const contextData = await contextResult.json();
+    console.log(contextData);
+    // console.log(issueKey);
+    // const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
+    //     headers: {
+    //         "Accept": "application/json",
+    //         "Authorization": `Bearer ${token}`}
+    // });
+    // const dataBranches = await responseBranches.json();
+}
+
+async function getEntity() {
+    // console.log(issueKey);
+    // const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
+    //     headers: {
+    //         "Accept": "application/json",
+    //         "Authorization": `Bearer ${token}`}
+    // });
+    // const dataBranches = await responseBranches.json();
+}
