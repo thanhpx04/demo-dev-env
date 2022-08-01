@@ -7,7 +7,7 @@ async function getGitHubInfo(issueKey) {
     // console.log(issueKey);
     // issueKey = 'M4P-1';
     console.log(issueKey);
-    const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
+    const responseBranches = await fetch(`https://api.github.com/repos/${owner}/${repo}/branches`, {
         headers: {
             "Accept": "application/json",
             "Authorization": `Bearer ${token}`}
@@ -16,7 +16,7 @@ async function getGitHubInfo(issueKey) {
     let listFilteredBranches = dataBranches.filter(function (item) { return item.name.includes(issueKey); });
     console.log(listFilteredBranches);
     console.log(listFilteredBranches.length);
-    const responseCommits = await fetch(` https://api.github.com/repos/${owner}/${repo}/commits?sha=${currentBranch}`, {
+    const responseCommits = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?sha=${currentBranch}`, {
         headers: {
             "Accept": "application/json",
             "Authorization": `Bearer ${token}`}
@@ -62,10 +62,9 @@ function openDialog(issueKey) {
 
 async function putEntity() {
     const contextResult = await AP.context.getContext();
-    const contextData = await contextResult.json();
+    const contextData = JSON.parse(contextResult);
     console.log(contextData);
-    // console.log(issueKey);
-    // const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
+    // const responseBranches = await fetch(`https://api.github.com/repos/${owner}/${repo}/branches`, {
     //     headers: {
     //         "Accept": "application/json",
     //         "Authorization": `Bearer ${token}`}
@@ -75,7 +74,7 @@ async function putEntity() {
 
 async function getEntity() {
     // console.log(issueKey);
-    // const responseBranches = await fetch(` https://api.github.com/repos/${owner}/${repo}/branches`, {
+    // const responseBranches = await fetch(`https://api.github.com/repos/${owner}/${repo}/branches`, {
     //     headers: {
     //         "Accept": "application/json",
     //         "Authorization": `Bearer ${token}`}
