@@ -1,38 +1,51 @@
 {
-    "key": "thanh-app-1837140722",
-    "name": "Connect app Nodejs Azure - Github Connect app",
-    "description": "Connect framework with Nodejs, deploy on Azure",
-    "baseUrl": "https://demo-dev-env.azurewebsites.net",
-    "authentication": {
-        "type": "none"
-    },
-    "scopes": [
-        "READ"
+  "key": "thanh-app-1837140722",
+  "name": "Connect app Nodejs Azure - Github Connect app",
+  "description": "Connect framework with Nodejs, deploy on Azure",
+  "baseUrl": "https://demo-dev-env.azurewebsites.net",
+  "authentication": {
+    "type": "none"
+  },
+  "scopes": ["READ"],
+  "apiMigrations": {
+    "signed-install": true
+  },
+  "modules": {
+    "webPanels": [
+      {
+        "url": "/main?issueKey={issue.key}",
+        "location": "atl.jira.view.issue.right.context",
+        "name": {
+          "value": "Github Connect"
+        },
+        "key": "thanh-reminder-web-right-panel"
+      }
     ],
-    "apiMigrations":{
-        "signed-install": true
-    },
-    "modules": {
-        "webPanels": [
-            {
-              "url": "/main?issueKey={issue.key}",
-              "location": "atl.jira.view.issue.right.context",
-              "name": {
-                "value": "Github Connect"
-              },
-              "key": "thanh-reminder-web-right-panel"
-            }
-        ],
-        "dialogs": [
-            {
-              "url": "/github-dialog.html",
-              "options": {
-                "header": {
-                  "value": "Test Header"
-                }
-              },
-              "key": "dialog-module-key"
-            }
-          ]
-    }
+    "dialogs": [
+      {
+        "url": "/github-dialog.html",
+        "options": {
+          "header": {
+            "value": "Test Header"
+          }
+        },
+        "key": "dialog-module-key"
+      }
+    ],
+    "generalPages": [
+      {
+        "key": "thanh-hello-world-page-jira",
+        "location": "system.top.navigation.bar",
+        "name": {
+          "value": "Get info"
+        },
+        "url": "/hello-world",
+        "conditions": [
+          {
+            "condition": "user_is_logged_in"
+          }
+        ]
+      }
+    ]
+  }
 }

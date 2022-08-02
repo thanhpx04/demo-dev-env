@@ -14,5 +14,14 @@ export default function routes(app, addon) {
       );
     });
 
+    app.get('/hello-world', (req, res) => {
+      res.render(
+        'hello-world.hbs',
+        {
+          title: 'Atlassian Connect'
+        }
+      );
+  });
+
     // Add additional route handlers here...
 }
