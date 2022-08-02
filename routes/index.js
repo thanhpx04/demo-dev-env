@@ -14,7 +14,7 @@ export default function routes(app, addon) {
       );
     });
 
-    app.post('/hello-world', (req, res) => {
+    app.post('/payload', (req, res) => {
       console.log(req);
       console.log(req);
   });
