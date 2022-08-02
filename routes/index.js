@@ -16,7 +16,7 @@ export default function routes(app, addon) {
 
     app.post('/payload', (req, res) => {
       console.log(req);
-      console.log(req);
+      console.log(res);
   });
 
     // Add additional route handlers here...
