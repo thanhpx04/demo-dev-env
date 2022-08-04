@@ -1,35 +1,31 @@
-{{!< layout}}
-<header class="aui-page-header">
-  <div class="aui-page-header-inner">
-    <div class="aui-page-header-main intro-header">
-      <h1>Hello World!</h1>
-
-      <p class="subtitle">Welcome to {{title}}</p>
-    </div>
-  </div>
-</header>
-
+{{!< layout}} 
 <div class="aui-page-panel main-panel">
   <div class="aui-page-panel-inner">
     <section class="aui-page-panel-item">
       <div class="aui-group">
         <div class="aui-item">
-          <p>
-            Congratulations!
-            You've successfully created an Atlassian Connect app using the
-            <a href="https://bitbucket.org/atlassian/atlassian-connect-express" target="_parent">atlassian-connect-express</a>
-            client library.
-          </p>
-          <p>
-            <button class="aui-button aui-button-primary" type="button" onclick="getContext()">
-              Get Context
-            </button>
-          </p>
-          <p>
-            <button class="aui-button aui-button-primary" type="button" onclick="getToken()">
-              Get token
-            </button>
-          </p>
+          <label for="comment-email"><strong>Issue key</strong></label>
+          <input class="text medium-field" type="text" id="issue-key" name="issue-key">
+        </div>
+      </div>
+      <hr>
+      <div class="aui-group">
+        <div class="aui-item">
+          <form class="aui" id="entity-form">
+            <div class="field-group">
+              <label for="entity-key">Entity key</label>
+              <input class="text medium-field" type="text" id="entity-key" name="entity-key">
+            </div>
+            <div class="field-group">
+              <label for="entity-value">Entity value</label>
+              <textarea class="textarea" name="entity-value" id="entity-value"></textarea>
+            </div>
+            <div class="buttons-container">
+              <div class="buttons">
+                <button class="aui-button aui-button-primary" type="button" onclick="saveEntity()">Save</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>

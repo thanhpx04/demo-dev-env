@@ -4,7 +4,11 @@
   "description": "Connect framework with Nodejs, deploy on Azure",
   "baseUrl": "https://demo-dev-env.azurewebsites.net",
   "authentication": {
-    "type": "none"
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
   },
   "scopes": ["READ"],
   "apiMigrations": {

@@ -1,4 +1,35 @@
 /* App frontend script */
+
+async function saveEntity() {
+    var issueKey = document.getElementById("issue-key").value;
+    var inputEntityKey = document.getElementById("entity-key").value;
+    var inputEntityValue = document.getElementById("entity-value").value;
+    
+    if(issueKey){
+        console.log(inputEntityKey);
+        console.log(inputEntityValue);
+        const bodyData = `{
+            "data": "${inputEntityValue}"
+        }`;
+        const response = await fetch(`https://thanhpx04.atlassian.net/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`, {
+            method: 'PUT',
+            headers: {
+                // 'Authorization': `Basic ${Buffer.from(
+                //     'thanhpx04@gmail.com:OkiCA3InmcKgS4oo6GAf7A3B'
+                // ).toString('base64')}`,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: bodyData
+        });
+        const dataResponse = await response.json();
+        console.log(dataResponse);
+    }
+
+    // reset value
+    document.getElementById('entity-form').reset();
+}
+
 async function getGitHubInfo(issueKey) {
     const owner = 'thanhpx04';
     const repo = 'test-github-plugin';

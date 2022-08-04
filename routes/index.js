@@ -3,6 +3,10 @@ export default function routes(app, addon) {
         res.redirect('/atlassian-connect.json');
     });
 
+    app.get('/hello-world', (req, res) => {
+      res.render('hello-world.hbs');
+    });
+
     app.get('/main', (req, res) => {
       let issueKey = req.query.issueKey
       console.log(issueKey);
