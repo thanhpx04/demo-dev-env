@@ -1,6 +1,6 @@
 /* App frontend script */
 
-async function saveEntity() {
+async function saveEntity1() {
     var issueKey = document.getElementById("issue-key").value;
     var inputEntityKey = document.getElementById("entity-key").value;
     var inputEntityValue = document.getElementById("entity-value").value;
@@ -11,7 +11,7 @@ async function saveEntity() {
         const bodyData = `{
             "data": "${inputEntityValue}"
         }`;
-        // const response = await AP.request(`https://thanhpx04.atlassian.net/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`, {
+        // const response = await fetch(`https://thanhpx04.atlassian.net/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`, {
         //     method: 'PUT',
         //     headers: {
         //         // 'Authorization': `Basic ${Buffer.from(
@@ -24,14 +24,55 @@ async function saveEntity() {
         // });
         // const dataResponse = await response.json();
         // console.log(dataResponse);
-        AP.request('/rest/api/3/project/search', {
+        AP.request({
+            url: `/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`,
+            type: 'PUT',
+            data: bodyData,
             success: function(responseText){
-              console.log(responseText);
+                console.log(responseText);
             },
             error: function(xhr, statusText, errorThrown){
-              console.log(arguments);
+                console.log(arguments);
             }
-          });
+        });
+    }
+
+    // reset value
+    document.getElementById('entity-form').reset();
+}
+
+async function saveEntity() {
+    var issueKey = document.getElementById("issue-key").value;
+    var inputEntityKey = document.getElementById("entity-key").value;
+    var inputEntityValue = document.getElementById("entity-value").value;
+    
+    if(issueKey){
+        console.log(inputEntityKey);
+        console.log(inputEntityValue);
+        const bodyData = `{
+            "data": "${inputEntityValue}"
+        }`;
+        const response = await fetch(`https://thanhpx04.atlassian.net/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`, {
+            method: 'PUT',
+            headers: {
+                // 'Authorization': `Basic ${Buffer.from(
+                //     'thanhpx04@gmail.com:OkiCA3InmcKgS4oo6GAf7A3B'
+                // ).toString('base64')}`,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: bodyData
+        });
+        const dataResponse = await response.json();
+        console.log(dataResponse);
+        // AP.request('/rest/api/3/project/search', {
+        //     success: function(responseText){
+        //       console.log(responseText);
+        //     },
+        //     error: function(xhr, statusText, errorThrown){
+        //       console.log(arguments);
+        //     }
+        //   });
     }
 
     // reset value
