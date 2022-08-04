@@ -25,10 +25,10 @@ async function saveEntity() {
         // const dataResponse = await response.json();
         // console.log(dataResponse);
         AP.request({
-            url: `rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`,
-            type: 'PUT',
-            contentType: 'application/json',
-            data: bodyData,
+            url: `rest/api/2/issue/${issueKey}`,
+            type: 'GET',
+            // contentType: 'application/json',
+            // data: bodyData,
             success: function(responseText){
               console.log(responseText);
             },
