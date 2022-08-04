@@ -11,19 +11,31 @@ async function saveEntity() {
         const bodyData = `{
             "data": "${inputEntityValue}"
         }`;
-        const response = await fetch(`https://thanhpx04.atlassian.net/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`, {
-            method: 'PUT',
-            headers: {
-                // 'Authorization': `Basic ${Buffer.from(
-                //     'thanhpx04@gmail.com:OkiCA3InmcKgS4oo6GAf7A3B'
-                // ).toString('base64')}`,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+        // const response = await AP.request(`https://thanhpx04.atlassian.net/rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         // 'Authorization': `Basic ${Buffer.from(
+        //         //     'thanhpx04@gmail.com:OkiCA3InmcKgS4oo6GAf7A3B'
+        //         // ).toString('base64')}`,
+        //         'Accept': 'application/json',
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: bodyData
+        // });
+        // const dataResponse = await response.json();
+        // console.log(dataResponse);
+        AP.request({
+            url: `rest/api/2/issue/${issueKey}/properties/${inputEntityKey}`,
+            type: 'PUT',
+            contentType: 'application/json',
+            data: bodyData,
+            success: function(responseText){
+              console.log(responseText);
             },
-            body: bodyData
-        });
-        const dataResponse = await response.json();
-        console.log(dataResponse);
+            error: function(xhr, statusText, errorThrown){
+              console.log(arguments);
+            }
+          });
     }
 
     // reset value
